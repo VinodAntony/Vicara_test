@@ -35,8 +35,30 @@ Epsilon =  4.253690631668857e-09
 -> Target STM32 board : STM32 NUCLEO - F411RE 
 	ARM Cortex M4, 100MHz max clock , 512kB ROM, 128kB RAM 
 
--> Debug: ST-Link Debugger (comes with the board)
+-> Setting up the Run Time Environment:
+	1. CMSIS > CORE
+	   CMSIS > DSP
+	2. Compiler > I/O > STDIN (for scanf debugging), select variant as ITM
+	   Compiler > I/O > STDOUT (for printf debugging), select variant as ITM
+	3. Device > Startup
 
--> 
+-> Configuring Flash Tools
+	Debug: Using Simulator 
+	Using default core clock @ 16MHz (default for STM32F411RE)
+	ST-Link Debugger Settings > Trace @ 16Mhz (same as core clock)
+
+## 3. Clock setup for time delay 
+	
+-> HSI (High speed Internal clock) clock set to 1 MHz 
+	Since we require only 10ms delay, we don't need a high frequency clock 
+	A lower time delay (such as in nano seconds or micro seconds) will require higher clock freq. as the resolution is higher. This also increases power requirements
+	 
+
+
+## 4. Running the code
+
+
+
+	
 
 

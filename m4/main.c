@@ -1,5 +1,4 @@
 
-
 #include <math.h>
 #include <stdio.h>
 #include "arm_math.h"
@@ -21,10 +20,8 @@ const float32_t sigma[NUM_OF_CLASSES*VEC_DIM] = {
 const float32_t classPriors[NUM_OF_CLASSES] = {
   0.3333333333333333f, 0.3333333333333333f, 0.3333333333333333f
 }; /*< Class prior probabilities */
-__inline int fputc(int c, FILE * stream)
-{
- return(ITM_SendChar(c)); 
-}
+
+
 int32_t main(void)
 {
   /* input with 2 dimensions*/
@@ -40,6 +37,8 @@ int32_t main(void)
   S.sigma = sigma; /* variance */        
   S.classPriors = classPriors; /* probability of occurence of each class 1/3,1/3,1/3 in this case */    
   S.epsilon= 4.253690631668857e-09f; 
+	
+	while (1){
 	/*test values for class 0 */
   //in[0] = 1.5f;
   //in[1] = 1.0f;
@@ -49,11 +48,11 @@ int32_t main(void)
 	/*test values for class 2 */
 	//in[0] = 0.0f;
   //in[1] = -3.0f;
-	while (1){
-		scanf("%f %f",&in[0],&in[1]);
+		//printf("hi\n\n");
+		scanf("%f%f",&in[0],&in[1]);
+		//scanf("%f ",&in[1]);
 		index = arm_gaussian_naive_bayes_predict_f32(&S, in, result);
 		printf("Class = %d\n\n", index);
-		
 	}
 
 }
