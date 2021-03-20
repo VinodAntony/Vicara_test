@@ -32,8 +32,8 @@ Epsilon =  4.253690631668857e-09
 ```
 ## 2. Setting Up Keil MDK 
 
--> Target STM32 board : STM32 NUCLEO - F411RE 
-	ARM Cortex M4, 100MHz max clock , 512kB ROM, 128kB RAM 
+-> Target STM32 board : STM32 NUCLEO - G070CB 
+	ARM Cortex M0+, 64MHz max clock , 128kB ROM, 36kB RAM 
 
 -> Setting up the Run Time Environment:
 	1. CMSIS > CORE
@@ -52,7 +52,7 @@ Epsilon =  4.253690631668857e-09
 -> HSI (High speed Internal clock) clock set to 1 MHz 
 	Since we require only 10ms delay, we don't need a high frequency clock 
 	A lower time delay (such as in nano seconds or micro seconds) will require higher clock freq. as the resolution is higher. This also increases power requirements
-	 
+
 
 
 ## 4. Running the code
