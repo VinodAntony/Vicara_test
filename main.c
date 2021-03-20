@@ -21,7 +21,10 @@ const float32_t sigma[NUM_OF_CLASSES*VEC_DIM] = {
 const float32_t classPriors[NUM_OF_CLASSES] = {
   0.3333333333333333f, 0.3333333333333333f, 0.3333333333333333f
 }; /*< Class prior probabilities */
-
+__inline int fputc(int c, FILE * stream)
+{
+ return(ITM_SendChar(c)); 
+}
 int32_t main(void)
 {
   /* input with 2 dimensions*/

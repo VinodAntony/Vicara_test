@@ -32,9 +32,11 @@ Epsilon =  4.253690631668857e-09
 ```
 ## 2. Setting Up Keil MDK 
 
--> Target STM32 board : STM32 NUCLEO - F411RE (I have the board with me)
+-> Target STM32 board : STM32 NUCLEO - F411RE 
 	ARM Cortex M4, 100MHz max clock , 512kB ROM, 128kB RAM 
+
 -> Debug: ST-Link Debugger (comes with the board)
+
 -> 
 
 
