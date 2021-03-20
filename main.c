@@ -32,7 +32,6 @@ int32_t main(void)
 
   /* Result of the classifier */
   float32_t result[NUM_OF_CLASSES];
-  float32_t maxProba;
   uint32_t index;
   
   S.vectorDimension = VEC_DIM; 
@@ -41,42 +40,21 @@ int32_t main(void)
   S.sigma = sigma; /* variance */        
   S.classPriors = classPriors; /* probability of occurence of each class 1/3,1/3,1/3 in this case */    
   S.epsilon= 4.253690631668857e-09f; 
+	/*test values for class 0 */
+  //in[0] = 1.5f;
+  //in[1] = 1.0f;
+	/*test values for class 1 */
+	//in[0] = -1.5f;
+  //in[1] = 1.0f;
+	/*test values for class 2 */
+	//in[0] = 0.0f;
+  //in[1] = -3.0f;
+	while (1){
+		scanf("%f %f",&in[0],&in[1]);
+		index = arm_gaussian_naive_bayes_predict_f32(&S, in, result);
+		printf("Class = %d\n\n", index);
+		
+	}
 
-  in[0] = 1.5f;
-  in[1] = 1.0f;
-
-  index = arm_gaussian_naive_bayes_predict_f32(&S, in, result);
-
-  maxProba = result[index];
-
-#if defined(SEMIHOSTING)
-  printf("Class = %d\n", index);
-#endif
-
-  in[0] = -1.5f;
-  in[1] = 1.0f;
-
-  index = arm_gaussian_naive_bayes_predict_f32(&S, in, result);
-
-  maxProba = result[index];
-
-#if defined(SEMIHOSTING)
-  printf("Class = %d\n", index);
-#endif
-
-  in[0] = 0.0f;
-  in[1] = -3.0f;
-
-  index = arm_gaussian_naive_bayes_predict_f32(&S, in, result);
-
-  maxProba = result[index];
-
-#if defined(SEMIHOSTING)
-  printf("Class = %d\n", index);
-#endif
-
-#if !defined(SEMIHOSTING)
-  while (1); /* main function does not return */
-#endif
 }
 
