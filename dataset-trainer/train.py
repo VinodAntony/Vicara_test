@@ -19,11 +19,14 @@ X_train=np.concatenate((x1,x2,x3))
 
 # The classes are 0,1 and 2.
 # This is the output function for our gausian naieve bayes trainer
-Y_train=np.concatenate((np.zeros(NBVECS),np.ones(NBVECS),2*np.ones(NBVECS)))
+Y_train=np.concatenate((np.zeros(no_of_vectors),np.ones(no_of_vectors),2*np.ones(no_of_vectors)))
 
 gnb = GaussianNB()
 gnb.fit(X_train, Y_train)
 
+#the code below is for checking if our trainer will predict the correct outputs
+#it is optional
+#####################################
 print("Testing")
 y_pred = gnb.predict([[1.5,1.0]])
 print(y_pred)
@@ -33,6 +36,8 @@ print(y_pred)
 
 y_pred = gnb.predict([[0,-3.0]])
 print(y_pred)
+
+#####################################
 
 # Dump of data for CMSIS-DSP
 
