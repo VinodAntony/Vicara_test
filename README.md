@@ -11,7 +11,18 @@
 	- Sigma
 	- Prior
 	- Epsilon
-	Values are noted and are to be used for the CMSIS-DSP library in the next step
+	Values are noted and are to be used for the following structure from the CMSIS-DSP library:
+```
+typedef struct
+{
+  uint32_t vectorDimension;  /**< Dimension of vector space */
+  uint32_t numberOfClasses;  /**< Number of different classes  */
+  const float32_t *theta;          /**< Mean values for the Gaussians */
+  const float32_t *sigma;          /**< Variances for the Gaussians */
+  const float32_t *classPriors;    /**< Class prior probabilities */
+  float32_t epsilon;         /**< Additive value to variances */
+} arm_gaussian_naive_bayes_instance_f32;
+```
 
 
 
