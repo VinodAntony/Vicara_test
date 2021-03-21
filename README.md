@@ -30,28 +30,24 @@ Sigma =  [0.980470340849684, 1.18166934802584, 1.0641256105658998, 1.00400833979
 Prior =  [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
 Epsilon =  4.253690631668857e-09
 ```
-## 2. Setting Up Keil MDK 
 
--> Target STM32 board : STM32 NUCLEO - G070CB 
-	ARM Cortex M0+, 64MHz max clock , 128kB ROM, 36kB RAM 
-
--> Setting up the Run Time Environment:
-	1. CMSIS > CORE
-	   CMSIS > DSP
-	2. Compiler > I/O > STDIN (for scanf debugging), select variant as ITM
-	   Compiler > I/O > STDOUT (for printf debugging), select variant as ITM
-	3. Device > Startup
-
--> Configuring Flash Tools
-	Debug: Using Simulator 
-	Using default core clock @ 16MHz (default for STM32F411RE)
-	ST-Link Debugger Settings > Trace @ 16Mhz (same as core clock)
-
-## 3. Clock setup for time delay 
+## 2. Clock setup for time delay 
 	
--> HSI (High speed Internal clock) clock set to 1 MHz 
+-> HSI selected -> High Speed Internal Clock -> @ 16MHz
+
+- AHB Prescaler : 2 
+
+- HCLK - 8MHz
+ 
+- APB Prescaler : 16
+
+- APB Timer : 1MHz <--  
+	
 	Since we require only 10ms delay, we don't need a high frequency clock 
-	A lower time delay (such as in nano seconds or micro seconds) will require higher clock freq. as the resolution is higher. This also increases power requirements
+	
+	A lower time delay (such as in nano seconds or micro seconds) will require higher clock freq. as the resolution 
+
+	is higher. This also increases power requirements
 
 
 
