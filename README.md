@@ -76,6 +76,15 @@ Run Time Environments :
 
 - Once the timer starts, everytime the value of the TMR CNT Register (counter) reaches 1000 (since ARR = 1000), a delay of 1ms occures.
 
+## 4. Online Resources
+
+- https://github.com/ARM-software/CMSIS_5/tree/develop/CMSIS/DSP/Examples/ARM/arm_bayes_example
+
+- https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/implement-classical-ml-with-arm-cmsis-dsp-libraries/single-page
+
+- https://youtu.be/BtAi6-7Lnlw
+
+
 
 
 
