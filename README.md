@@ -76,6 +76,8 @@ Run Time Environments :
 
 - Once the timer starts, everytime the value of the TMR CNT Register (counter) reaches 1000 (since ARR = 1000), a delay of 1ms occures.
 
+- ![alt text](https://github.com/VinodAntony/Vicara_test/blob/main/img1.png?raw=true)
+
 ## 4. Online Resources
 
 - https://github.com/ARM-software/CMSIS_5/tree/develop/CMSIS/DSP/Examples/ARM/arm_bayes_example
