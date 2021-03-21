@@ -74,7 +74,7 @@ Run Time Environments :
 
 - The Timer starts when CEN bit is set in the TMRx_CR1 Register (here x = 6)
 
-- Once the timer starts, everytime the value of the TMR CNT Register (counter) reaches 1000 (since ARR = 1000), a delay of 1ms has occured.
+- Once the timer starts, everytime the value of the TMR CNT Register (counter) reaches 1000 (since ARR = 1000), a delay of 1ms occures.
 
 
 
